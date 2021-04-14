@@ -40,7 +40,6 @@ class GameBoardProvider extends ChangeNotifier {
       final Tuple2<int, int>? move =
           service!.miniMax(_boardState, _activePlayer);
       if (_gameOver != true) turn(move!.item1, move.item2);
-      // ignore: unnecessary_null_comparison
       if (user == null) aiTurn();
     });
   }
