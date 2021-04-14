@@ -46,7 +46,7 @@ class GameBoardView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Your turn $activePlayer"),
+        title: Text("'$activePlayer' Turn"),
         centerTitle: true,
       ),
       body: Center(
@@ -122,11 +122,6 @@ class GameBoardView extends StatelessWidget {
       boardState[index % 3][index ~/ 3] == null;
 
   bool isUserActivePlayer(
-      String? user, String activePlayer, bool isTwoPlayerGame) {
-    if (isTwoPlayerGame) {
-      return true;
-    } else {
-      return user == activePlayer;
-    }
-  }
+          String? user, String activePlayer, bool isTwoPlayerGame) =>
+      isTwoPlayerGame ? true : user == activePlayer;
 }
