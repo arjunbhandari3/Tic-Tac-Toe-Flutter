@@ -105,8 +105,8 @@ class GameBoardView extends StatelessWidget {
 
   String _getResultMessage(String? winner, String? user, bool isTwoPlayerGame) {
     // Win Message - That announce us as winner
-    // Tie Message - Nobody one
-    // Lose Message - Which tells us that the player / user has not one
+    // Tie Message - Nobody won
+    // Lose Message - Which tells us that the player / user has not won
     if (isTwoPlayerGame && winner != null) {
       return "Congratulations $winner, you won the game";
     } else if (user != null && user == winner) {
@@ -114,7 +114,7 @@ class GameBoardView extends StatelessWidget {
     } else if (user != winner && winner != null) {
       return "The AI is unbeatable, sorry you lost. Try again!";
     } else {
-      return "Tie, nobody wins";
+      return "Tie, Nobody wins";
     }
   }
 
